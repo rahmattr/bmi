@@ -13,6 +13,7 @@ From a `bash` shell
   uvicorn main:app
 ```
 
+######
 ## Deployment with Docker
 
 To deploy this project with `docker` run
