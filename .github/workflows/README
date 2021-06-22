@@ -1,0 +1,9 @@
+PYTHON-APP.YML
+
+Untuk memastikan aplikasi tersebut bisa dibuat dari awal.
+Untuk memastikan testcase apabila ada perubahan akan ada infonya.
+
+
+SECURTY-SCAN.YAML
+
+Untuk scanning SAST Script Python (Untuk memastikan function berbahaya atau tidak)
