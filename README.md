@@ -39,6 +39,6 @@ To deploy this project with `docker` run
 
 ## Authors
 
-- [@rahmattr](https://www.github.com/rahmattr)
+- [@rahmattr](https://www.github.com/rahmattr) .
 
   
