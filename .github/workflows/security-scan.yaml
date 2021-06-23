@@ -6,8 +6,22 @@ on:
   pull_request:
     branches: [ master ]
 
+
+jobs:
+ salus_scan_job:
+   runs-on: ubuntu-latest
+   name: Salus Security Scan Example
+   steps:
+   - uses: actions/checkout@v2
+   - name: Salus Scan
+     id: salus_scan
+     uses: federacy/scan-action@0.1.3
+     with:
+         SALUS_CONFIGURATION: "file://salus-config.yaml"
+
 #on: [push]
 
+### SALUS 1
 #jobs:
 # salus_scan_job:
 #   runs-on: ubuntu-latest
@@ -23,22 +37,24 @@ on:
 #     env:
 #         SALUS_CONFIGURATION: "file://salus-config.yaml"
 
-jobs:
-  salus_scan_job:
-    runs-on: ubuntu-latest
-    name: Salus Security Scan Example
-    steps:
-    - uses: actions/checkout@v1
-    - name: Salus Scan
-      id: salus_scan
-      uses: federacy/scan-action@0.1.3
-      with:
-          active_scanners: "\n  - Bandit"
-          enforced_scanners: "\n  - Bandit" 
+#jobs:
+#  salus_scan_job:
+#    runs-on: ubuntu-latest
+#    name: Salus Security Scan Example
+#    steps:
+#    - uses: actions/checkout@v1
+#    - name: Salus Scan
+#      id: salus_scan
+#      uses: federacy/scan-action@0.1.3
+#      with:
+#          active_scanners: "\n  - Bandit"
+#          enforced_scanners: "\n  - Bandit" 
 #      env:	      
 #	  SALUS_CONFIGURATION: "file://salus-config.yaml	
  
 
+
+### SCAN SAST
 #jobs:
 #  security_scan_job:
 #    runs-on: ubuntu-latest

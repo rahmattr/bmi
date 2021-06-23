@@ -1,4 +1,26 @@
+# Array[String] or String.
+# Array[String] - lists all the scanner to execute if Salus determines that
+#                 they are relevant to the source code in the repository.
+# String        - value of "all" or "none" which will use all defined scanners or none of them respectively.
+# active_scanners:
+#   - Bandit
+
+# Array[String] or String.
+# Array[String] - lists all scanners that should cause Salus to exit with
+#                 a non-zero status if they find a security vulnerability.
+#                 This is particularly useful for failing CI builds.
+# String        - value of "all" or "none" which will use all defined scanners or none of them respectively.
+enforced_scanners:
+  - Bandit
+
 scanner_configs:
     Bandit:
-      skips:  # list of test IDs to skip
-        - B101
+      exclude: # paths to exclude from scan
+        - test_main.py
+
+
+
+#scanner_configs:
+#    Bandit:
+#      skips:  # list of test IDs to skip
+#        - B101
