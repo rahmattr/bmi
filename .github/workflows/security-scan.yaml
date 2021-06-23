@@ -21,8 +21,8 @@ jobs:
           active_scanners: "\n  - Bandit"
           enforced_scanners: "\n  - Bandit" 
       env:	      
-	 SALUS_CONFIGURATION: "file://salus-config.yaml	
-
+	  SALUS_CONFIGURATION: "file://salus-config.yaml	
+ 
 
 #jobs:
 #  security_scan_job:
