@@ -6,17 +6,31 @@ on:
   pull_request:
     branches: [ master ]
 
+#on: [push]
+
 jobs:
-  security_scan_job:
+  salus_scan_job:
     runs-on: ubuntu-latest
-    name: Security Scan
+    name: Salus Security Scan Example
     steps:
-    - uses: actions/checkout@v2
-    - name: SAST Scan
-      uses: AppThreat/sast-scan-action@master
+    - uses: actions/checkout@v1
+    - name: Salus Scan
+      id: salus_scan
+      uses: federacy/scan-action@0.1.1
       with:
-        type: "python"
-    - uses: actions/upload-artifact@v2
-      with:
-        name: reports
-        path: reports
+          active_scanners: "\n  - Bandit"
+          enforced_scanners: "\n  - Bandit"
+#jobs:
+#  security_scan_job:
+#    runs-on: ubuntu-latest
+#    name: Security Scan
+#    steps:
+#    - uses: actions/checkout@v2
+#    - name: SAST Scan
+#      uses: AppThreat/sast-scan-action@master
+#      with:
+#        type: "python"
+#    - uses: actions/upload-artifact@v2
+#      with:
+#        name: reports
+#        path: reports
