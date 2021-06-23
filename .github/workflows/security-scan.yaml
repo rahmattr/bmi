@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
 
-on: [push]
+#on: [push]
 
 jobs:
  salus_scan_job:
