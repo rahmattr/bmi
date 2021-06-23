@@ -33,7 +33,7 @@ class Human(BaseModel):
 
 @app.get("/")
 async def read_root():
-    return {"Hello": "world"}
+    return {"Hello": "World"}
 
 @app.post("/bmi", tags=['bmi'])
 async def calculate_bmi(human: Human):
